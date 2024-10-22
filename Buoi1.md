@@ -360,17 +360,26 @@ public class Person {
 * Ví dụ:
 
 ```java
-public class MathUtils {
-  public static final double PI = 3.14159; // Thuộc tính static
+public class Main {
+  // Static method
+  static void myStaticMethod() {
+    System.out.println("Static methods can be called without creating objects");
+  }
 
-  public static int sum(int a, int b) { // Phương thức static
-    return a + b;
+  // Public method
+  public void myPublicMethod() {
+    System.out.println("Public methods must be called by creating objects");
+  }
+
+  // Main method
+  public static void main(String[] args) {
+    myStaticMethod(); // Call the static method
+    // myPublicMethod(); This would compile an error
+
+    Main myObj = new Main(); // Create an object of Main
+    myObj.myPublicMethod(); // Call the public method on the object
   }
 }
-
-// Sử dụng thành viên static
-double circumference = 2 * MathUtils.PI * radius;
-int total = MathUtils.sum(5, 3);
 ```
 
 
